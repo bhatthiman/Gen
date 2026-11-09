@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#160f20">
+<title>નૂતન વર્ષાભિનંદન | Vikram Samvat 2083</title>
+<style>
+:root{
+  --night:#160f20; --wine:#301727; --gold:#e8c77b; --gold2:#b8873f;
+  --cream:#fff2d5; --muted:#d8c5a3; --line:rgba(232,199,123,.28);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; min-height:100vh; color:var(--cream);
+  font-family:system-ui,-apple-system,"Noto Sans Gujarati","Noto Sans Devanagari",sans-serif;
+  background:
+    radial-gradient(ellipse at 50% 20%,rgba(128,62,72,.35),transparent 42%),
+    radial-gradient(ellipse at 10% 80%,rgba(123,83,35,.12),transparent 35%),
+    linear-gradient(145deg,#100c19,#241321 55%,#120e1a);
+  overflow-x:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.14;
+  background-image:radial-gradient(#e8c77b .65px,transparent .65px);
+  background-size:29px 29px;mask-image:linear-gradient(to bottom,black,transparent 90%);
+}
+.shell{width:min(760px,100%);margin:auto;padding:18px 18px 34px;position:relative}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand{font-size:.78rem;letter-spacing:.16em;color:var(--gold);font-weight:700}
+.langs{display:flex;padding:4px;border:1px solid var(--line);border-radius:999px;background:#160f20aa;backdrop-filter:blur(10px)}
+.langs button{border:0;background:transparent;color:#d9c8aa;padding:7px 11px;border-radius:999px;font:600 .78rem inherit;cursor:pointer}
+.langs button.active{background:linear-gradient(135deg,#f2d995,#b8863e);color:#241522}
+.hero{position:relative;text-align:center;padding:30px 8px 16px}
+.ornament{color:var(--gold2);font-size:1.2rem;letter-spacing:.65em;margin:5px 0 14px;opacity:.9}
+.eyebrow{font-size:.82rem;letter-spacing:.12em;color:var(--muted);margin:0 0 8px}
+.greeting{font-family:Georgia,"Noto Serif Gujarati","Noto Serif Devanagari",serif;color:var(--gold);font-weight:700;
+  font-size:clamp(2rem,8vw,3.5rem);line-height:1.25;margin:0;text-shadow:0 0 25px #e8c77b35}
+.samvat{display:inline-flex;align-items:center;gap:10px;margin:13px auto 0;padding:7px 18px;border:1px solid var(--line);border-radius:999px;
+  color:#f5dfac;letter-spacing:.12em;font-size:.88rem;background:linear-gradient(90deg,#2b1827aa,#4a2a2aaa,#2b1827aa)}
+.samvat .year{font-size:1.4rem;font-weight:800;letter-spacing:.08em}
+.year span{display:inline-block;opacity:0;transform:translateY(18px) scale(.72);animation:yearRise .75s cubic-bezier(.2,.8,.2,1) forwards}
+.year span:nth-child(1){animation-delay:.25s}.year span:nth-child(2){animation-delay:.43s}.year span:nth-child(3){animation-delay:.61s}.year span:nth-child(4){animation-delay:.79s}
+@keyframes yearRise{to{opacity:1;transform:translateY(0) scale(1)}}
+.hero-sub{max-width:540px;margin:16px auto 0;color:#e6d8c0;line-height:1.8;font-size:1rem}
+.scene{position:relative;height:205px;display:flex;justify-content:center;align-items:flex-end;margin:2px auto 4px;max-width:520px}
+.halo{position:absolute;width:230px;height:150px;bottom:25px;border-radius:50%;background:radial-gradient(ellipse,rgba(245,176,68,.2),rgba(245,176,68,.06) 42%,transparent 70%);filter:blur(5px)}
+.diya{position:relative;width:154px;height:95px;margin-bottom:22px;filter:drop-shadow(0 12px 18px #0008)}
+.bowl{position:absolute;bottom:0;left:8px;width:138px;height:53px;border-radius:10% 10% 55% 55%/10% 10% 80% 80%;
+ background:linear-gradient(180deg,#f2c36b 0%,#b96c2d 45%,#6b351e 100%);border:1px solid #f4d28a;box-shadow:inset 0 5px 10px #fff5a4aa,inset 0 -8px 12px #4a1d14}
+.bowl:after{content:"";position:absolute;left:13px;right:13px;top:5px;height:9px;border-radius:50%;background:linear-gradient(90deg,#8b4b27,#f7d78d,#8b4b27)}
+.wick{position:absolute;bottom:45px;left:75px;width:3px;height:25px;background:#f7dfa1;transform:rotate(8deg);z-index:2}
+.flame{position:absolute;z-index:3;left:61px;bottom:64px;width:31px;height:53px;transform-origin:50% 100%;
+ background:radial-gradient(ellipse at 50% 72%,#fff8c9 0 12%,#ffe28a 28%,#ff9c36 58%,#e85c21 76%,transparent 78%);
+ clip-path:ellipse(43% 50% at 50% 50%);filter:drop-shadow(0 0 13px #ffb342);animation:flicker 1.8s ease-in-out infinite alternate}
+.flame:after{content:"";position:absolute;inset:11px 9px 5px;background:#fff5c4;clip-path:ellipse(40% 48% at 50% 50%)}
+@keyframes flicker{0%{transform:rotate(-4deg) scale(.96,1)}50%{transform:rotate(3deg) scale(1.04,.96)}100%{transform:rotate(-2deg) scale(.98,1.06)}}
+.sparkle{position:absolute;left:calc(50% + 88px);bottom:112px;border:1px solid var(--line);border-radius:50%;width:38px;height:38px;background:#261723;color:var(--gold);font-size:1.1rem;cursor:pointer;box-shadow:0 0 18px #e8c77b22}
+.sparkle.lit{background:#f2d995;color:#4b2b19;box-shadow:0 0 25px #ffc75c99}
+.sparkle-note{font-size:.7rem;color:#bca77f;position:absolute;left:calc(50% + 130px);bottom:121px;white-space:nowrap}
+.shubh{display:flex;align-items:center;justify-content:center;gap:15px;margin:0 auto 22px;color:var(--gold);font-size:1.1rem;letter-spacing:.08em}
+.swastik{font-family:serif;font-size:2rem;line-height:1;color:#e9c77b;text-shadow:0 0 14px #e8c77b55}
+.panel{border:1px solid var(--line);border-radius:22px;padding:22px 22px 20px;background:linear-gradient(145deg,rgba(66,37,48,.72),rgba(29,20,32,.82));box-shadow:0 16px 45px #0003;backdrop-filter:blur(8px)}
+.panel h2{font-family:Georgia,serif;font-size:1.2rem;color:var(--gold);text-align:center;margin:0 0 13px;font-weight:600}
+.message{text-align:center;line-height:1.95;color:#f3e7d0;margin:0;font-size:1rem}
+.thought{margin-top:16px;padding:16px 18px;border-left:2px solid var(--gold2);background:#120d19a8;border-radius:0 14px 14px 0}
+.thought-label{text-align:center;color:var(--gold2);font-size:.7rem;letter-spacing:.18em;margin-bottom:8px}
+.thought p{margin:0;text-align:center;line-height:1.8;color:#f5dfb5;font-family:Georgia,serif;font-size:1.02rem}
+.signature{text-align:center;margin:23px 0 0;color:#e8c77b;font-weight:700;letter-spacing:.08em}
+.signature small{display:block;color:#bca77f;font-weight:400;letter-spacing:.04em;margin-top:5px}
+.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:19px 0 0}
+.action{border:1px solid var(--line);border-radius:999px;padding:10px 16px;color:#f2dcae;background:#241725;cursor:pointer;font:inherit;font-size:.82rem}
+.action.primary{background:linear-gradient(135deg,#f2d995,#b8863e);color:#281722;border:0;font-weight:700}
+footer{text-align:center;color:#907d69;font-size:.7rem;margin-top:22px;letter-spacing:.08em}
+#sparkles{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.particle{position:absolute;width:10px;height:10px;opacity:0;animation:twinkle 1.65s ease-out forwards;filter:drop-shadow(0 0 5px #ffc45a)}
+.particle:before,.particle:after{content:"";position:absolute;left:50%;top:50%;background:linear-gradient(transparent,#fff1b9 35%,#f4c75f 50%,#fff1b9 65%,transparent);border-radius:100%;transform:translate(-50%,-50%)}
+.particle:before{width:2px;height:100%}
+.particle:after{width:100%;height:2px}
+@keyframes twinkle{0%{opacity:0;transform:translateY(10px) scale(.2) rotate(0)}22%{opacity:1;transform:translateY(0) scale(1) rotate(45deg)}65%{opacity:.9;transform:translateY(-35px) scale(.75) rotate(90deg)}100%{opacity:0;transform:translateY(-78px) scale(.15) rotate(135deg)}}
+@media(max-width:420px){.shell{padding:14px 14px 26px}.hero{padding-top:24px}.scene{height:185px}.panel{padding:19px 16px}.sparkle-note{display:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="sparkles" aria-hidden="true"></div>
+<main class="shell">
+  <header class="topbar">
+    <div class="brand">MECHXCEL</div>
+    <nav class="langs" aria-label="Choose language">
+      <button type="button" data-lang="gu" class="active" aria-pressed="true">ગુજ</button>
+      <button type="button" data-lang="hi" aria-pressed="false">हिंदी</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="ornament">✦ ❖ ✦</div>
+    <p class="eyebrow" data-i18n="eyebrow">દીપાવલી પછીના નવા પ્રારંભની શુભેચ્છાઓ</p>
+    <h1 class="greeting" data-i18n="greeting">નૂતન વર્ષાભિનંદન</h1>
+    <div class="samvat"><span data-i18n="samvat">વિક્રમ સંવત</span><span class="year" aria-label="2083"><span>૨</span><span>૦</span><span>૮</span><span>૩</span></span></div>
+    <p class="hero-sub" data-i18n="heroSub">નવા વિચાર, નવી આશા અને અનંત શક્યતાઓ સાથે એક સુંદર શરૂઆત.</p>
+  </section>
+
+  <section class="scene" aria-label="A continuously lit festive diya">
+    <div class="halo"></div>
+    <div class="diya">
+      <div class="wick"></div><div class="flame"></div><div class="bowl"></div>
+    </div>
+    <button class="sparkle" id="sparkleBtn" type="button" aria-label="Light a little sparkle" title="Add a little sparkle">✧</button>
+    <span class="sparkle-note" data-i18n="sparkleHint">એક નાની ચમક ઉમેરો</span>
+  </section>
+
+  <div class="shubh"><span class="swastik" aria-label="Swastik">卐</span><span data-i18n="shubh">શુભ • લાભ</span><span class="swastik" aria-hidden="true">卐</span></div>
+
+  <section class="panel">
+    <h2 data-i18n="wishTitle">આવતું વર્ષ મંગલમય રહે</h2>
+    <p class="message" data-i18n="wish">આ નવું વર્ષ આપના જીવનમાં સુખ, શાંતિ, સ્વાસ્થ્ય અને સમૃદ્ધિ લઈને આવે. દરેક દિવસ નવી તક બને અને દરેક પ્રયાસ સફળતાની નવી દિશા ખોલે.</p>
+    <div class="thought">
+      <div class="thought-label" data-i18n="thoughtLabel">આજનો વિચાર • AI અને જીવન</div>
+      <p data-i18n="thought">AI આપણને વધુ ઝડપથી વિચારવામાં મદદ કરી શકે છે; પરંતુ શું વિચારવું, શા માટે વિચારવું અને તેનો ઉપયોગ કેવી રીતે કરવો — એ સમજણ હંમેશા આપણી પોતાની રહેશે.</p>
+    </div>
+    <div class="signature">MechXcel <small data-i18n="signature">વિચારથી સર્જન સુધી • નવા વર્ષની હાર્દિક શુભેચ્છાઓ</small></div>
+    <div class="actions">
+      <button class="action primary" id="shareBtn" type="button" data-i18n="share">WhatsApp પર શેર કરો ↗</button>
+    </div>
+  </section>
+  <footer data-i18n="footer">વિક્રમ સંવત ૨૦૮૩ • નવી શરૂઆત, નવી શક્યતાઓ</footer>
+</main>
+
+<script>
+const copy = {
+gu:{
+ eyebrow:"દીપાવલી પછીના નવા પ્રારંભની શુભેચ્છાઓ", greeting:"નૂતન વર્ષાભિનંદન", samvat:"વિક્રમ સંવત",
+ heroSub:"નવા વિચાર, નવી આશા અને અનંત શક્યતાઓ સાથે એક સુંદર શરૂઆત.", sparkleHint:"એક નાની ચમક ઉમેરો",
+ shubh:"શુભ • લાભ", wishTitle:"આવતું વર્ષ મંગલમય રહે",
+ wish:"આ નવું વર્ષ આપના જીવનમાં સુખ, શાંતિ, સ્વાસ્થ્ય અને સમૃદ્ધિ લઈને આવે. દરેક દિવસ નવી તક બને અને દરેક પ્રયાસ સફળતાની નવી દિશા ખોલે.",
+ thoughtLabel:"આજનો વિચાર • AI અને જીવન",
+ thought:"AI આપણને વધુ ઝડપથી વિચારવામાં મદદ કરી શકે છે; પરંતુ શું વિચારવું, શા માટે વિચારવું અને તેનો ઉપયોગ કેવી રીતે કરવો — એ સમજણ હંમેશા આપણી પોતાની રહેશે.",
+ signature:"વિચારથી સર્જન સુધી • નવા વર્ષની હાર્દિક શુભેચ્છાઓ", share:"WhatsApp પર શેર કરો ↗",
+ footer:"વિક્રમ સંવત ૨૦૮૩ • નવી શરૂઆત, નવી શક્યતાઓ", shareText:"વિક્રમ સંવત ૨૦૮૩ની હાર્દિક શુભેચ્છાઓ! — MechXcel"
+},
+hi:{
+ eyebrow:"दीपावली के बाद एक नई शुरुआत की शुभकामनाएँ", greeting:"नूतन वर्षाभिनंदन", samvat:"विक्रम संवत",
+ heroSub:"नए विचार, नई आशाएँ और अनंत संभावनाओं के साथ एक सुंदर शुरुआत।", sparkleHint:"एक छोटी-सी चमक जोड़ें",
+ shubh:"शुभ • लाभ", wishTitle:"आने वाला वर्ष मंगलमय हो",
+ wish:"यह नया वर्ष आपके जीवन में सुख, शांति, स्वास्थ्य और समृद्धि लेकर आए। हर दिन एक नया अवसर बने और हर प्रयास सफलता की नई दिशा खोले।",
+ thoughtLabel:"आज का विचार • AI और जीवन",
+ thought:"AI हमें तेज़ी से सोचने में मदद कर सकता है; लेकिन क्या सोचना है, क्यों सोचना है और उसका उपयोग कैसे करना है — यह समझ हमेशा हमारी अपनी रहेगी।",
+ signature:"विचार से सृजन तक • नववर्ष की हार्दिक शुभकामनाएँ", share:"WhatsApp पर साझा करें ↗",
+ footer:"विक्रम संवत २०८३ • नई शुरुआत, नई संभावनाएँ", shareText:"विक्रम संवत २०८३ की हार्दिक शुभकामनाएँ! — MechXcel"
+},
+en:{
+ eyebrow:"Warm wishes for a new beginning after Diwali", greeting:"A Happy New Year", samvat:"VIKRAM SAMVAT",
+ heroSub:"A beautiful beginning filled with fresh ideas, renewed hope and endless possibilities.", sparkleHint:"Add a little sparkle",
+ shubh:"SHUBH • LABH", wishTitle:"May the year ahead be auspicious",
+ wish:"May this New Year bring happiness, peace, good health and prosperity. May every day open a new opportunity, and every effort lead to meaningful progress.",
+ thoughtLabel:"A THOUGHT • AI & LIFE",
+ thought:"AI can help us think faster; but what to think, why it matters, and how to use that intelligence wisely — that understanding remains ours.",
+ signature:"From ideas to creation • Warm wishes for the New Year", share:"Share on WhatsApp ↗",
+ footer:"Vikram Samvat 2083 • New beginnings, new possibilities", shareText:"Warm wishes for Vikram Samvat 2083! — MechXcel"
+}};
+const guDigits="૨૦૮૩", hiDigits="२०८३";
+function setLang(lang){
+ document.documentElement.lang=lang;
+ document.querySelectorAll("[data-i18n]").forEach(el=>{const key=el.dataset.i18n;if(copy[lang][key])el.textContent=copy[lang][key]});
+ document.querySelectorAll("[data-lang]").forEach(b=>{const active=b.dataset.lang===lang;b.classList.toggle("active",active);b.setAttribute("aria-pressed",String(active))});
+ const digits=lang==="gu"?guDigits:lang==="hi"?hiDigits:"2083";
+ document.querySelectorAll(".year span").forEach((s,i)=>s.textContent=digits[i]);
+}
+document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
+function burst(count=16){
+ const root=document.getElementById("sparkles");
+ for(let i=0;i<count;i++){
+  const p=document.createElement("span");p.className="particle";
+  const size=6+Math.random()*9;p.style.width=size+"px";p.style.height=size+"px";
+  p.style.left=(42+Math.random()*16)+"%";p.style.top=(52+Math.random()*17)+"%";
+  p.style.animationDelay=(Math.random()*.35)+"s";
+  root.appendChild(p);setTimeout(()=>p.remove(),2400);
+ }
+}
+const sparkleBtn=document.getElementById("sparkleBtn");
+sparkleBtn.addEventListener("click",()=>{sparkleBtn.classList.add("lit");celebrateInteraction();burst(15);setTimeout(()=>sparkleBtn.classList.remove("lit"),1100)});
+let audioCtx;
+let lastChimeAt=0;
+let audioReady=false;
+function playChime(){
+ try{
+  audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();
+  if(audioCtx.state==="suspended")audioCtx.resume();
+  const now=audioCtx.currentTime;
+  // A soft, original three-note bell-like chime.
+  [659.25,830.61,987.77].forEach((freq,i)=>{
+   const osc=audioCtx.createOscillator(),gain=audioCtx.createGain();
+   osc.type="sine";osc.frequency.value=freq;
+   gain.gain.setValueAtTime(.0001,now+i*.18);
+   gain.gain.exponentialRampToValueAtTime(.075,now+i*.18+.025);
+   gain.gain.exponentialRampToValueAtTime(.0001,now+i*.18+1.25);
+   osc.connect(gain);gain.connect(audioCtx.destination);
+   osc.start(now+i*.18);osc.stop(now+i*.18+1.3);
+  });
+ }catch(e){/* Audio is optional; the greeting remains fully usable. */}
+}
+function celebrateInteraction(){
+ const now=Date.now();
+ burst(9);
+ // Browsers require a user gesture before audio can play. The first tap
+ // unlocks audio; subsequent taps/scrolls play the chime with a short cooldown.
+ if(!audioReady){audioReady=true;playChime();lastChimeAt=now;return;}
+ if(now-lastChimeAt>2600){playChime();lastChimeAt=now;}
+}
+let lastScrollSparkle=0;
+document.addEventListener("pointerdown",(event)=>{
+ // Avoid double-triggering when tapping the sparkle control itself.
+ if(event.target.closest("#sparkleBtn"))return;
+ celebrateInteraction();
+},{passive:true});
+window.addEventListener("scroll",()=>{
+ const now=Date.now();
+ if(now-lastScrollSparkle>1100){lastScrollSparkle=now;celebrateInteraction();}
+},{passive:true});
+
+document.getElementById("shareBtn").addEventListener("click",()=>{
+ const lang=document.documentElement.lang||"gu";
+ const message=copy[lang].shareText;
+ const pageUrl=location.protocol==="http:"||location.protocol==="https:" ? location.href : "";
+ const shareText=pageUrl ? message+" "+pageUrl : message;
+ const whatsappUrl="https://wa.me/?text="+encodeURIComponent(shareText);
+ window.open(whatsappUrl,"_blank","noopener,noreferrer");
+});
+setTimeout(()=>burst(10),1100);
+</script>
+</body>
+</html>
